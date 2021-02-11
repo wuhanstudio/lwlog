@@ -6,7 +6,10 @@ cwd     = GetCurrentDir()
 
 # The set of source files associated with this SConscript file.
 
-src    = Glob('lwlog_demo.c')
+src = []
+
+if GetDepend('LWLOG_USE_USAGE_DEMO'):
+	src    += Glob('lwlog_demo.c')
 
 LOCAL_CCFLAGS = ''
 path   =  [cwd]
