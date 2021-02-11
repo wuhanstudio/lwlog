@@ -12,9 +12,10 @@
 #define LOG_COLOR (1) // 0: off, 1: on, default: 1
 #define LOG_LEVEL (7) // -1: off, 0~7: different log levels, default: 7
 
+#include <rtthread.h>
 #include "lwlog.h"
 
-int main(int argc, char const *argv[])
+int lwlog_demo(int argc, char const *argv[])
 {
     lwlog_emerg("This a emerge log.");
     lwlog_alert("This a alert log.");
@@ -27,3 +28,4 @@ int main(int argc, char const *argv[])
 
 	return 0;
 }
+MSH_CMD_EXPORT(lwlog_demo, lwlog demo);
